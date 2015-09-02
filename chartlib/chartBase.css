@@ -1,0 +1,27 @@
+
+.lineGroup {
+	stroke : #000000;
+	stroke-width : 7;
+}
+
+.scaleGroup {
+	stroke : #ffffff;
+	stroke-width : 3;
+}
+
+.chartMainArea {
+	background-color : #778899;
+	opacity : 0.5;
+}
+
+.svgContainer {
+	overflow : hidden;
+}
+
+.mark_x {
+	padding : 0px
+}
+
+.mark_y {
+	padding : 0px
+}

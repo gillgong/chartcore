@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<title> Here is the SeriersBarChart demo </title>
+		<script src = "../../chartlib/jquery/jquery_1.11.0.js"></script>
+		<script src = "../../chartlib/axis/Axis.js"></script>
+		<script src = "../../chartlib/axis/Axis_x.js"></script>
+		<script src = "../../chartlib/axis/Axis_time_x.js"></script>
+		<script src = "../../chartlib/axis/Axis_y.js"></script>
+		<script src = "../../chartlib/chart/Chart.js"></script>
+		<script src = "./SeriersBarChart.js"></script>
+		<link rel="stylesheet" type="text/css" href="./SeriersBarChart.css" />
+		<style>
+			.seriersbarchart {
+			
+				position : absolute;
+				width : 800px;
+				height : 500px;
+				left : 50px;
+				top : 50px;
+				border : 1px solid blue;			
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="seriersbarchart">
+		
+		</div>
+		
+		<script type="text/javascript">
+			var data = {
+				'axisGuide' : {
+					'x' : 'aaa',
+					'y' : 'bbb'
+				},
+				'data' : [
+					{
+						'aaa' : '2009/05/12',
+						'bbb' : 145.3
+					},
+					{
+						'aaa' : '2009/10/12',
+						'bbb' : 1111
+					},
+					{
+						'aaa' : '2010/03/12',
+						'bbb' : 556
+					},
+					{
+						'aaa' : '2010/08/12',
+						'bbb' : 500.3
+					},
+					{
+						'aaa' : '2011/01/12',
+						'bbb' : 655
+					},
+					{
+						'aaa' : '2011/06/12',
+						'bbb' : 477
+					},
+					{
+						'aaa' : '2011/11/12',
+						'bbb' : 500.3
+					}
+				]
+			};
+			
+			var container = $(".seriersbarchart");
+			var axis_x_conf = {
+    			leftDis : 25,
+				rightDis : 40,
+				bottomDis : 25,
+				axisWidth : 5,
+				leftScaleDis : 20,
+				rightScaleDis : 20,
+				scaleDirection : 'up',
+				requireScaleNum : 7
+			};
+			
+			var axis_y_conf = {
+    			leftDis : 760,
+				topDis : 5,
+				bottomDis : 30,
+				axisWidth : 5,
+				topScaleDis : 20,
+				bottomScaleDis : 20,
+				scaleDirection : 'left'
+			};
+			
+			var chart_conf = {
+				'container' : container,
+				'axis_x' : [ new Axis_time_x( container , axis_x_conf ) ],
+				'axis_y' : [ new Axis_y( container , axis_y_conf ) ]
+			};
+			
+			var Chart = new SeriersBarChart( chart_conf );	
+			Chart.setData( data );
+			Chart.draw();
+			
+		</script>
+	</body>
+</html>
