@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title> Here is the PieChart demo </title>
+		<script src = "../../chartlib/jquery/jquery_1.11.0.js"></script>
+		<script src = "../../chartlib/axis/Axis.js"></script>
+		<script src = "../../chartlib/axis/Axis_x.js"></script>
+		<script src = "../../chartlib/axis/Axis_y.js"></script>
+		<script src = "../../chartlib/chart/Chart.js"></script>
+		<script src = "./PieChart.js"></script>
+		<link rel="stylesheet" type="text/css" href="./pieChart.css" />
+		<style>
+			.piechart {
+			
+				position : absolute;
+				width : 800px;
+				height : 500px;
+				left : 50px;
+				top : 50px;		
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="piechart">
+		
+		</div>
+		
+		<script type="text/javascript">
+			var data = {
+				'axisGuide' : {
+					'x' : 'aaa',
+					'y' : 'bbb'
+				},
+				'data' : [
+					{
+						'aaa' : 1,
+						'bbb' : 0.2,
+						'name' : 'MorningStar'
+					},
+					{
+						'aaa' : 2,
+						'bbb' : 0.2,
+						'name' : 'Google'
+					},
+					{
+						'aaa' : 3,
+						'bbb' : 0.3,
+						'name': 'Microsoft' 
+					},
+					{
+						'aaa' : 4,
+						'bbb' : 0.1,
+						'name' : 'Firefox'
+					},
+					{
+						'aaa' : 5,
+						'bbb' : 0.2,
+						'name' : 'Baidu'
+					}
+				]
+			};
+			
+			var container = $(".piechart");
+			var axis_x_conf = {
+    			leftDis : 10,
+				rightDis : 10,
+				bottomDis : 0,
+				axisWidth : 0,
+				leftScaleDis : 0,
+				rightScaleDis : 0,
+				scaleDirection : 'up',
+				requireScaleNum : 10
+			};
+			
+			var axis_y_conf = {
+    			leftDis : 0,
+				topDis : 10,
+				bottomDis : 10,
+				axisWidth : 0,
+				topScaleDis : 0,
+				bottomScaleDis : 0,
+				scaleDirection : 'left'
+			};
+			
+			var chart_conf = {
+				'container' : container,
+				'axis_x' : [ new Axis_x( container , axis_x_conf ) ],
+				'axis_y' : [ new Axis_y( container , axis_y_conf ) ]
+			};
+			
+			var Chart = new PieChart( chart_conf );	
+			Chart.setData( data );
+			Chart.draw();
+			
+		</script>
+	</body>
+</html>

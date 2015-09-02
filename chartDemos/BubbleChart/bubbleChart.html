@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<title>Here is the bubble chart test</title>
+		<script src = "../../chartlib/jquery/jquery_1.11.0.js"></script>
+		<script src = "../../chartlib/axis/Axis.js"></script>
+		<script src = "../../chartlib/axis/Axis_x.js"></script>
+		<script src = "../../chartlib/axis/Axis_y.js"></script>
+		<script src = "../../chartlib/chart/Chart.js"></script>
+		<script src = "./BubbleChart.js"></script>
+		<link rel="stylesheet" type="text/css" href="./bubbleChartCss.css" />
+		<style>
+			.bubbleChartContainer {
+				position : absolute;
+				width : 1000px;
+				height : 500px;
+				left : 50px;
+				top : 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "bubbleChartContainer">
+		
+		</div>
+		
+		<div>
+			<button class="destroy"> Destroy </button>
+		</div>
+		
+		<script type="text/javascript">
+			var data = {
+				'axisGuide' : {
+					'x' : 'aaa',
+					'y' : 'bbb'
+				},
+				'data' : []
+			};
+
+			for( var i=0 ; i<50 ; i++ ) {
+				data.data.push({
+					'aaa' : Math.round( Math.random()*50 ),
+					'bbb' : Math.round( Math.random()*100 )
+				});
+			}
+		
+
+			var container = $(".bubbleChartContainer");		
+			var axis_x_conf = {
+    			leftDis : 40,
+				rightDis : 5,
+				bottomDis : 23,
+				axisWidth : 5,
+				leftScaleDis : 20,
+				rightScaleDis : 20
+			};
+			
+			var axis_y_conf = {
+    			leftDis : 33,
+				topDis : 5,
+				bottomDis : 30,
+				axisWidth : 5,
+				topScaleDis : 20,
+				bottomScaleDis : 20,
+				requireScaleNum :5
+			};
+			
+			var chart_conf = {
+				'container' : container,
+				'axis_x' : [ new Axis_x( container , axis_x_conf ) ],
+				'axis_y' : [ new Axis_y( container , axis_y_conf ) ]
+			};
+			
+			var Chart = new BubbleChart( chart_conf );	
+			Chart.setData( data );
+			Chart.draw();
+			
+			$('.destroy').click(function() {
+				Chart.destroy();
+			})
+		</script>
+	</body>
+</html>
