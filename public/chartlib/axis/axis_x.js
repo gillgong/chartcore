@@ -1,4 +1,4 @@
-(function() {
+define(['jquery', 'axis'],function( $ , Axis ) {
 	/**
 	*This is a actual axis on "x" direction;
 	*Axis_x Class is extends from Axis Class;
@@ -263,6 +263,6 @@
 		}
 	} );
 	//////////////////////////////////////////////////////////
-	window.Axis_x = Axis_x;
+	return Axis_x;
 	/////////////////////////////////////////////////////////
-})();
+});

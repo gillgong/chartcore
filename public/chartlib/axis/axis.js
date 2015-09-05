@@ -1,4 +1,4 @@
-(function(){
+define(['jquery'],function( $ ){
 	/**
 	*Axis Class is a super Class , any actual Class about axis 
 	* are all should extend it. 
@@ -271,5 +271,5 @@
 	};
 	
 	Axis.prototype.constructor = Axis;
-	window.Axis = Axis;
-})();
+	return Axis;
+});

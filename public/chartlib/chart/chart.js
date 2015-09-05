@@ -1,4 +1,4 @@
-(function() {
+define(['jquery'],function( $ ) {
 	/**
 	*Here is the chart base , any actual charts should extend on this chart.
 	*The argument "chartBaseConf" as below :
@@ -362,5 +362,5 @@
 	};
 	
 	Chart.prototype.constructor = Chart;
-	window.Chart = Chart;
-})();
+	return Chart;
+});

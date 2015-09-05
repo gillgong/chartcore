@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./app.js"
+  },
+  "devDependencies": {
+    "grunt-contrib-requirejs": "^0.4.4"
   }
 }
