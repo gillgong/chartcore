@@ -1,4 +1,4 @@
-(function() {
+define(['chart'],function( Chart ) {
 
 	var SeriersChart = function( chart_conf ) {
 	
@@ -144,6 +144,5 @@
 	});
 	
 	SeriersChart.prototype.constructor = SeriersChart;
-	window.SeriersChart = SeriersChart;
-	
-})();
+	return SeriersChart;	
+});

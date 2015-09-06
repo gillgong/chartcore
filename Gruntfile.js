@@ -1,24 +1,28 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: grunt.file.readJSON('package.json')
+  });
 
-    requirejs: {
+  grunt.registerTask('compressjs','compress js here',function() {
+
+    grunt.config.set('requirejs',{
       compile: {
         options: {
           baseUrl: "./public",
-          fileExclusionRegExp: /(jquery1.11|require|underscore|text)$/,
+          fileExclusionRegExp: /jquery1.11.js$/,
           mainConfigFile: "public/config.js",
-          include: ["chartlib/axis/axis_x",'chartlib/chart/chart','chartlib/axis/axis_y'],
-          out: "public/chartlib/chart.min.js"
+          name : 'example/serierschart/serierschartIns',
+          //include: ["chartlib/axis/axis_x",'chartlib/chart/chart','chartlib/axis/axis_y'],
+          out: "public/chart.min.js"
         }
-      }
+      }      
+    });
+    if( !grunt.task.exists('requirejs') ) {
+      grunt.loadNpmTasks('grunt-contrib-requirejs');
     }
-
+    grunt.task.run('requirejs');
   });
 
-  grunt.loadNpmTasks('grunt-contrib-requirejs');
-
-  grunt.registerTask('default', ['requirejs']);
+  grunt.registerTask('default', ['compressjs']);
 };

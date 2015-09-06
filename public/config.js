@@ -16,6 +16,8 @@ requirejs.config({
 	  	axis : 'chartlib/axis/axis',
 	  	axis_x : 'chartlib/axis/axis_x',
 	  	axis_y : 'chartlib/axis/axis_y',
-	  	chart : 'chartlib/chart/chart'
+	  	chart : 'chartlib/chart/chart',
+	  	////////////////////////////////////////////////////////////////
+	  	serierschart : 'example/serierschart/serierschart'
 	}
 });
