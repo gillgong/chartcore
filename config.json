@@ -1,0 +1,22 @@
+{
+    "compressjs":{
+     "options": {
+         "optimize": "none",
+         "baseUrl": "./core",
+         "mainConfigFile":"core/config.js",
+         "out": "public/js/lib/g4.min.js",
+         "exclude": [],
+         "include": [
+             "underscore",
+             "jquery",
+             "text",
+             "axis",
+             "axis_x",
+             "axis_y",
+             "chart",
+             "util",
+             "g4"
+         ]
+     }
+ }
+}

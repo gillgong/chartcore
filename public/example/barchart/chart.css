@@ -1,0 +1,37 @@
+.axisContainer_x .lineGroup {
+	stroke : #ccc;
+	stroke-width : 6;
+}
+
+.axisContainer_x .scaleGroup {
+	stroke : #000000;
+	stroke-width : 0;
+}
+
+.axisContainer_y .lineGroup {
+	stroke : #000000;
+	stroke-width : 0;
+}
+
+.axisContainer_y .scaleGroup {
+	stroke : #000000;
+	stroke-width : 1;
+}
+
+.mark_y {
+	padding : 0px;
+	transform : rotate(50deg);
+}
+
+.mainGroup {
+
+	fill : red;
+	fill-opacity : 0.7;
+}
+
+.backGroup {
+	
+	stroke-width : 0.5;
+	stroke : #000;
+	stroke-dasharray : 2,2;
+}
