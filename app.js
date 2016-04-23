@@ -1,18 +1,26 @@
+'use strict';
 
-var express = require('express'),
-	path = require('path'),
+var app,
 	port = 3000,
-	app;
+	path = require('path'),
+	express = require('express');
 
 app = express();
+app.set('port', port);
 app.use(express.static(path.join(__dirname, 'public')));
-app.set( 'title','my node web test');
-app.get('/get',function( req , res , next ) {
-	
-	res.send("very good");
-	res.end();
+
+///////////////////////////////////APIS///////////////////////////////////////////////////////
+app.use('/get/dashboardhead',function(req, res, next) {
+	var data = {
+			'pageAccess' : 8000,
+			'userAccess' : 5000,
+			'newUserNum' : 2000,
+			'bookingNum' : 1000
+	};
+  	res.end( JSON.stringify( data ) ,'utf-8');
 });
-app.listen( port );
-console.log( 'app path is :'+ app.path() );
-console.log('Express server listening on port 3000');
-module.exports = app;
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+app.listen(port, function() {
+	console.log('Express server listening on port ' + port);
+});

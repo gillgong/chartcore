@@ -9,12 +9,43 @@ module.exports = function(grunt) {
     grunt.config.set('requirejs',{
       compile: {
         options: {
-          baseUrl: "./public",
-          fileExclusionRegExp: /jquery1.11.js$/,
-          mainConfigFile: "public/config.js",
-          name : 'example/serierschart/serierschartIns',
-          //include: ["chartlib/axis/axis_x",'chartlib/chart/chart','chartlib/axis/axis_y'],
-          out: "public/chart.min.js"
+          optimize: "none",
+          baseUrl: "./publicts",
+          shim : {
+            underscore: {
+                exports: '_'
+            },
+            jquery: {
+              exports: '$'
+            }
+          },
+          paths: {
+            underscore : '3rdlib/underscore',
+            jquery : '3rdlib/jquery1.11',
+            text : '3rdlib/text',
+            axis : 'chartlib/axis/axis',
+            axis_x : 'chartlib/axis/axis_x',
+            axis_y : 'chartlib/axis/axis_y',
+            chart : 'chartlib/chart/chart',
+            ////////////////////////////////////////////////////////////////
+            serierschart : 'example/serierschart/serierschart'
+          },
+          //mainConfigFile: "publicts/config.js",
+          //name : 'example/serierschart/serierschartIns',
+          out: "publicts/chart.min.js",
+          exclude : [
+            'jquery'
+          ],
+          include : [
+          //  'underscore',
+          //  'jquery',
+          //  'text',
+          //  'axis',
+            'serierschart',
+            'axis_x',
+            'axis_y',
+            'chart',
+          ]
         }
       }      
     });
