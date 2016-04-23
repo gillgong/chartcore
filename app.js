@@ -7,6 +7,7 @@ var express = require('express');
 var app = express();
 
 app.set('port', port);
+app.use(express.static(path.join(__dirname, 'core')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, function() {

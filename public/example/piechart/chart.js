@@ -1,4 +1,4 @@
-(function() {
+define(['chart'],function(Chart) {
 	
 	var PieChart = function( chart_conf ) {
 	
@@ -87,5 +87,5 @@
 	});
 	
 	PieChart.prototype.constructor = PieChart;
-	window.PieChart = PieChart;
-})();
+	return PieChart;
+});

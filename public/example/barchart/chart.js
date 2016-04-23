@@ -1,4 +1,4 @@
-(function() {
+define(['chart'],function(Chart) {
 	
 	/**
 	*BarChart example as below:
@@ -67,5 +67,5 @@
 	
 	});
 	BarChart.prototype.constructor = BarChart;
-	window.BarChart = BarChart;
-})();
+	return BarChart;
+});
