@@ -13,7 +13,6 @@ requirejs.config({
 		underscore : '3rdlib/underscore',
 		jquery : '3rdlib/jquery1.11',
 		text : '3rdlib/text',
-		css:'',
 		
 	  	axis : 'chartlib/axis/axis',
 	  	axis_x : 'chartlib/axis/axis_x',

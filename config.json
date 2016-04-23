@@ -1,0 +1,35 @@
+{
+    "compressjs":{
+     "options": {
+         "optimize": "none",
+         "baseUrl": "./core",
+         "shim": {
+             "underscore": {
+                 "exports": "_"
+             },
+             "jquery": {
+                 "exports": "$"
+             }
+         },
+         "paths": {
+             "underscore": "3rdlib/underscore",
+             "jquery": "3rdlib/jquery1.11",
+             "text": "3rdlib/text",
+             "axis": "chartlib/axis/axis",
+             "axis_x": "chartlib/axis/axis_x",
+             "axis_y": "chartlib/axis/axis_y",
+             "chart": "chartlib/chart/chart"
+         },
+         "out": "core/chart.min.js",
+         "exclude": [
+             "jquery"
+         ],
+         "include": [
+             "axis",
+             "axis_x",
+             "axis_y",
+             "chart"
+         ]
+     }
+ }
+}
